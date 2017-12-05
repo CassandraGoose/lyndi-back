@@ -4,7 +4,7 @@ exports.up = function(knex, Promise) {
     .createTable('comment', function(table) {
       table.increments('id').primary()
       table.string('name').defaultTo('Anonymous')
-      table.text('comment').notNullable()
+      table.string('comment')
       table.timestamp('created_at').defaultTo(knex.fn.now())
     })
 };

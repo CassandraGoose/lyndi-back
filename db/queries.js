@@ -2,8 +2,7 @@ var knex = require('./knex')
 
 module.exports = {
   getAll() {
-    console.log('queriesall');
-    return knex('comment')
+    return knex('comment').orderBy('created_at', 'desc')
   },
   create(comment) {
     return knex('comment').insert(comment, '*')
