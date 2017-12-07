@@ -2,7 +2,7 @@ var knex = require('./knex')
 
 module.exports = {
   getAll() {
-    return knex('comment').orderBy('created_at', 'desc')
+    return knex('comment').orderBy('created_at', 'desc').limit(5)
   },
   getAll2(){
     return knex('comment').orderBy('created_at', 'desc').offset(5)
